@@ -1,0 +1,365 @@
+---
+title: "Speed Dating Project"
+output: html_notebook
+---
+```{r}
+knitr::opts_chunk$set(echo = FALSE, 
+                      message = FALSE, 
+                      warning = FALSE,
+                      comment = NA)
+```
+
+```{r}
+library(tidyverse)
+library(knitr)
+library(broom)
+library(infer)
+```
+
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Asian',RaceF=='Asian')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Asian',RaceF=='Asian')%>%
+  summarize(mean(DecisionM))
+```
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Asian',RaceF=='Caucasian')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Asian',RaceF=='Caucasian')%>%
+  summarize(mean(DecisionM))
+```
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Asian',RaceF=='Black')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Asian',RaceF=='Black')%>%
+  summarize(mean(DecisionM))
+```
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Asian',RaceF=='Latino')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Asian',RaceF=='Latino')%>%
+  summarize(mean(DecisionM))
+```
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Asian',RaceF=='Other')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Asian',RaceF=='Other')%>%
+  summarize(mean(DecisionM))
+```
+
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Caucasian',RaceF=='Caucasian')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Caucasian',RaceF=='Caucasian')%>%
+  summarize(mean(DecisionM))
+```
+
+
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Caucasian',RaceF=='Asian')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Caucasian',RaceF=='Asian')%>%
+  summarize(mean(DecisionM))
+```
+
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Caucasian',RaceF=='Black')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Caucasian',RaceF=='Black')%>%
+  summarize(mean(DecisionM))
+```
+
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Caucasian',RaceF=='Latino')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Caucasian',RaceF=='Latino')%>%
+  summarize(mean(DecisionM))
+```
+
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Caucasian',RaceF=='Other')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Caucasian',RaceF=='Other')%>%
+  summarize(mean(DecisionM))
+```
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Black',RaceF=='Caucasian')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Black',RaceF=='Caucasian')%>%
+  summarize(mean(DecisionM))
+```
+
+
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Black',RaceF=='Asian')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Black',RaceF=='Asian')%>%
+  summarize(mean(DecisionM))
+```
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Black',RaceF=='Black')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Black',RaceF=='Black')%>%
+  summarize(mean(DecisionM))
+```
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Black',RaceF=='Latino')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Black',RaceF=='Latino')%>%
+  summarize(mean(DecisionM))
+```
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Black',RaceF=='Other')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Black',RaceF=='Other')%>%
+  summarize(mean(DecisionM))
+```
+
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Latino',RaceF=='Caucasian')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Latino',RaceF=='Caucasian')%>%
+  summarize(mean(DecisionM))
+```
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Latino',RaceF=='Asian')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Latino',RaceF=='Asian')%>%
+  summarize(mean(DecisionM))
+```
+
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Latino',RaceF=='Black')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Latino',RaceF=='Black')%>%
+  summarize(mean(DecisionM))
+```
+
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Latino',RaceF=='Latino')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Latino',RaceF=='Latino')%>%
+  summarize(mean(DecisionM))
+```
+
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Latino',RaceF=='Other')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Latino',RaceF=='Other')%>%
+  summarize(mean(DecisionM))
+```
+
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Other',RaceF=='Caucasian')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Other',RaceF=='Caucasian')%>%
+  summarize(mean(DecisionM))
+```
+
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Other',RaceF=='Asian')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Other',RaceF=='Asian')%>%
+  summarize(mean(DecisionM))
+```
+
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Other',RaceF=='Black')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Other',RaceF=='Black')%>%
+  summarize(mean(DecisionM))
+```
+
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Other',RaceF=='Latino')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Other',RaceF=='Latino')%>%
+  summarize(mean(DecisionM))
+```
+
+```{r}
+SpeedDating%>%
+  filter(RaceM=='Other',RaceF=='Other')%>%
+  summarize(mean(DecisionF))
+
+SpeedDating%>%
+  filter(RaceM=='Other',RaceF=='Other')%>%
+  summarize(mean(DecisionM))
+```
+
+```{r}
+ggplot(data=SpeedDating, aes(x=RaceM, y=DecisionF))+
+geom_point(aes(color=RaceM))+labs(title='Female Decisions Based off Male Ethnicity', x='Race of Male', y='Female Decision')
+```
+
+```{r}
+ggplot(data=SpeedDating, aes(x=DecisionM))+
+geom_bar(aes(color=RaceF))+labs(title='Male Decisions Based off Male Ethnicity', x='Male Decision')
+```
+
+```{r}
+null.dist.F<-SpeedDating%>%
+  specify(response=DecisionM)%>%
+  hypothesize(null='point', mu=7.5)%>%
+  generate(reps=10000,type='bootstrap')%>%
+  calculate(stat="mean")
+
+null.dist.F%>%
+  ggplot()+geom_histogram(aes(stat), bins=10)+
+  geom_vline(xintercept=7.5)+theme_custom()
+
+null.dist.M<-SpeedDating%>%
+  specify(response=DecisionF)%>%
+  hypothesize(null='point', mu=7.5)%>%
+  generate(reps=10000,type='bootstrap')%>%
+  calculate(stat="mean")
+
+null.dist.M%>%
+  ggplot()+geom_histogram(aes(stat), bins=10)+
+  geom_vline(xintercept=7.5)+theme_custom()
+```
+
+```{r}
+null.dist.F%>%
+  summarise(lower95=quantile(stat, probs=.025),
+            upper95=quantile(stat, probs=.975))
+
+null.dist.M%>%
+  summarise(lower95=quantile(stat, probs=.025),
+            upper95=quantile(stat, probs=.975))
+```
+
+```{r}
+same <- SpeedDating %>%
+  filter(RaceF == RaceM)
+diff <- SpeedDating %>%
+  filter(RaceF != RaceM)
+
+mean(same$DecisionF, na.rm =T)
+mean(same$DecisionM, na.rm =T)
+
+mean(diff$DecisionF, na.rm = T)
+mean(diff$DecisionM, na.rm = T)
+
+same$DecisionF <- as.character(same$DecisionF)
+same$DecisionM <- as.character(same$DecisionM)
+diff$DecisionF <- as.character(diff$DecisionF)
+diff$DecisionM <- as.character(diff$DecisionM)
+
+null.dist.F <- same %>%
+  specify(response = DecisionF, success = "1") %>%
+  hypothesize(null = "point", p = 0.4451) %>%
+  generate(reps = 10000, type = "simulate") %>%
+  calculate(stat = "prop")
+
+null.dist.F %>%
+  filter(stat >= 0.4793) %>%
+  summarise(p_value = n()/nrow(null.dist))
+
+null.dist.M <- same %>%
+  specify(response = DecisionM, success = "1") %>%
+  hypothesize(null = "point", p = 0.5419) %>%
+  generate(reps = 10000, type = "simulate") %>%
+  calculate(stat = "prop")
+
+null.dist.M %>%
+  filter(stat >= 0.5123) %>%
+  summarise(p_value = n()/nrow(null.dist))
+```
+
+```{r}
+SpeedDating$same <- SpeedDating$RaceF == SpeedDating$RaceM
+
+lm(DecisionF ~ factor(same), data = SpeedDating)
+
+lm(DecisionM ~ factor(same), data = SpeedDating)
+```
+
+```{r}
+SpeedDating$diff <- SpeedDating$RaceF != SpeedDating$RaceM
+
+lm(DecisionF ~ factor(diff), data = SpeedDating)
+
+lm(DecisionM ~ factor(diff), data = SpeedDating)
+```
+
+```{r}
+ggplot(data=SpeedDating, aes(x=same))+
+geom_bar(aes(fill=factor(DecisionF)))+labs(title='Female Decisions Based off Ethnicity', x='Ethnicity (same/different)')
+
+ggplot(data=SpeedDating, aes(x=same))+
+geom_bar(aes(fill=factor(DecisionM)))+labs(title='Male Decisions Based off Ethnicity', x='Ethnicity (same/different)')
+```
+
